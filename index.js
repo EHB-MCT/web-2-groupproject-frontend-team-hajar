@@ -18,15 +18,16 @@ async function move() {
 }
 
 function postForm() {
-    const formData = {
-        name: document.getElementById("name").value,
-        points: document.getElementById("points").value,
-        course: document.getElementById("course").value,
-        session: document.getElementById("session").value,
-    };
+    
 
     document.getElementById('forms').addEventListener('submit', (event) => {
         event.preventDefault();
+        const formData = {
+            name: document.getElementById("name").value,
+            points: document.getElementById("points").value,
+            course: document.getElementById("course").value,
+            session: document.getElementById("session").value,
+        };
         fetch('https://s7-team-tajar.herokuapp.com/saveChallenges', {
                 method: 'POST',
                 headers: {
